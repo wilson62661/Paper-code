@@ -14,9 +14,10 @@ You can download the CIC-DDoS2019 datasets:
 ## Usage Instructions
 
 ### 1. Data Preprocessing
-Run to preprocess the dataset and split it into training and testing sets:  
-```bash
-HELM.ipynb
+Run the script to preprocess the dataset and split it into training and testing sets.`Fragment.py`
 
+### 2.Train RF Model
+Using Google Colab run the script to preprocess the dataset and split it into training and testing sets.`HELM.ipynb`
 
-
+### 3. Convert
+Using Google Colab run the script to convert the RF model’s decision boundaries into executable rules for the data plane.`HELM_convert_RF_to_table_entries.ipynb`
