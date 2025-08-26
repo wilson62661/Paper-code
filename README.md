@@ -6,25 +6,30 @@ This repository contains the code and data for our project on hybrid DDoS detect
 
 ## File Structure
 
-- HELM.p4: Main P4 program implementing hybrid DDoS detection (entropy + ML) on the data plane.
+### Two main folders:
 
-- Makefile: Automates compilation and execution of the P4 program using BMv2 and Mininet.
+  #### 1. **HELM_Github** - Contains the P4 program, control rules, runtime configuration, and monitoring scripts:
 
-control_rules_base.txt: Base rules for switch setup (register initialization, basic routing entries, entropy term mappings).
+- **Makefile**: Automates compilation and execution of the P4 program using BMv2 and Mininet.
 
-My_method_entries.txt: Machine learning–derived rules mapped into feature tables, code tables, and voting tables.
+- **control_rules_base.txt**: Base rules for switch setup (register initialization, basic routing entries, entropy term mappings).
 
-control_rule.sh: Shell script to automatically load both base rules and ML rules into the switch via simple_switch_CLI.
+- **HELM_entries.txt**: Machine learning–derived rules mapped into feature tables, code tables, and voting tables.
 
-Monitoring & Traffic Control – Runtime monitoring and traffic replay:
+- **control_rule.sh**: Shell script to automatically load both base rules and ML rules into the switch via simple_switch_CLI.
 
-ow_monitor.py: Python script that monitors observation window (OW) counters, triggers traffic replay (tcpreplay) on hosts, and logs register states to the result/ folder.
+- **ow_monitor.py**: Python script that monitors observation window (OW) counters, triggers traffic replay (tcpreplay) on hosts, and logs register states to the result/ folder.
 
-Runtime & Topology Configurations – Environment setup for BMv2 and Mininet:
+- **s1-runtime.json**: Switch runtime configuration, including default actions for ipv4_lpm and ipv4_dpi_lpm.
 
-s1-runtime.json: Switch runtime configuration, including default actions for ipv4_lpm and ipv4_dpi_lpm.
+- **topology.json**: Mininet topology definition (hosts, switch, links, runtime bindings).
 
-topology.json: Mininet topology definition (hosts, switch, links, runtime bindings).
+#### 2. **ML Folder**: Contains machine learning training and model conversion scripts:
+
+- **HELM.ipynb**: Jupyter notebook to train the Random Forest classifier using datasets (e.g., CICDDoS2019).
+
+- **HELM_convert_RF_to_table_entries.ipynb**: Converts trained ML models into executable P4 table entries.
+
 ## Enviroment
 -This project is based on the BMv2 software switch, and the environment is built using the official P4 VM files. To use this project, please put `HELM_Github` into `p4lang/tutorials/exercises/`, and the official VMs can be downloaded here:
 
