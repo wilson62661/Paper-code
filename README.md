@@ -64,11 +64,11 @@ You can download the datasets:
 
 - This maps the trained model’s decision boundaries into P4 match-action table entries.
 
-- The output will be a CLI command file (e.g., HELM_entries.txt).
+- The output will be a CLI command file (e.g., `HELM_entries.txt`).
 
 ### 4.Start the P4 Program
 
-- Navigate to the exercise directory (e.g., exercises/HELM/).
+- Navigate to the exercise directory (e.g., `exercises/HELM/`).
 
 - Run:`make run`
 
