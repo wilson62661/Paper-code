@@ -1,0 +1,21 @@
+{
+  "target": "bmv2",
+  "p4info": "build/HELM_NOML.p4.p4info.txtpb",
+  "bmv2_json": "build/HELM_NOML.json",
+  "table_entries": [
+    {
+      "table": "MyIngress.ipv4_dpi_lpm",
+      "default_action":true,
+      "action_name": "MyIngress.drop",
+      "action_params": { }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "default_action":true,
+      "action_name": "MyIngress.drop",
+      "action_params": { }
+    }
+  ]
+}
+
+    
