@@ -40,6 +40,8 @@ You can download the datasets:
 
 👉 [https://iotanalytics.unsw.edu.au/attack-data.html](#)
 
+👉 [https://drive.google.com/file/d/1oA-_PGJSoBc6Oa1rFtGgRXhD76Oc__0A/view?usp=sharing](#)
+
 👉 [https://www.unb.ca/cic/datasets/ddos-2019.html](#)
 
 
